@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-blush: #FCE7ED;
+    --color-rose: #E87595;
+    --color-rose-dark: #D65E80;
+    --color-ivory: #FFFBF8;
+    --color-charcoal: #29252A;
+    --color-mauve: #82757B;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color: #29252A;
+    background-color: #FFFBF8;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #FFFBF8;
+    color: #29252A;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #FCE7ED;
+    color: #29252A;
+  }
+
+  /* Accessible focus styling */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid #E87595;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  /* Subtle organic blob border radius */
+  .rounded-organic {
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+  }
+  
+  .rounded-blob {
+    border-radius: 50% 50% 48% 52% / 58% 58% 42% 42%;
+  }
+
+  .rounded-portrait {
+    border-radius: 200px 200px 140px 140px;
+  }
+
+  /* Glassmorphic frosted card */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(245, 220, 228, 0.7);
+  }
+
+  /* Subtle floral/doodle animation */
+  @keyframes gentle-float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-5px) rotate(1.5deg);
+    }
+  }
+
+  .animate-gentle-float {
+    animation: gentle-float 6s ease-in-out infinite;
+  }
+}
